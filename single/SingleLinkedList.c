@@ -4,10 +4,10 @@
 #include <string.h>
 
 #include "SingleLinkedList.h"
-
+#define LENGTH 16
 single_list_t* list_new()
 {
-    single_list_t* new_list = (single_list_t*) malloc(sizeof(single_list_t));
+    single_list_t* new_list = (single_list_t*) malloc(LENGTH*sizeof(single_list_t));
     if(!new_list)
         return NULL;
 
@@ -20,7 +20,7 @@ single_list_t* list_new()
 
 single_node_t* node_new(void* val)
 {
-    single_node_t* new_node = (single_node_t*) malloc(sizeof(single_node_t));
+    single_node_t* new_node = (single_node_t*) malloc(LENGTH*sizeof(single_node_t));
     if(!new_node)
         return NULL;
 
@@ -183,7 +183,7 @@ void list_print(single_list_t* list)
 
     while(node != NULL)
     {
-        printf("Current node  value: %s, At position %d.\n", node->val, index);
+        printf("Current node  value: %s, At position %d.\n", (char*)node->val, index);
         node = node->next;
         index++;
     }

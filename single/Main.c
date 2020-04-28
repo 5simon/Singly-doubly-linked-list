@@ -54,18 +54,18 @@ int main()
     single_node_t* result_find = list_find(list, "e");
     if (result_find != NULL)
     {
-        printf("Element %s is in the list\n", result_find->val);
+        printf("Element %s is in the list\n",(char*) result_find->val);
     }
     else
     {
-        printf("Element %s is not in the list!\n", result_find->val);
+        printf("Element %s is not in the list!\n", (char*)result_find->val);
     }
 
     int index = 2;
     single_node_t* result_at = list_at(list, index);
     if (result_at != NULL)
     {
-        printf("Index %d has the value of %s\n", index, result_at->val);
+        printf("Index %d has the value of %s\n", index, (char*)result_at->val);
     }
     else
     {

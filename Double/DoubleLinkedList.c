@@ -5,9 +5,11 @@
 
 #include "DoubleLinkedList.h"
 
+#define Length 16
+
 double_list_t* list_new()
 {
-    double_list_t* new_list = (double_list_t*) malloc(sizeof(double_list_t));
+    double_list_t* new_list = (double_list_t*) malloc(Length*sizeof(double_list_t));
     if(!new_list)
         return NULL;
 
@@ -20,7 +22,7 @@ double_list_t* list_new()
 
 double_node_t* node_new(void* val)
 {
-    double_node_t* new_node = (double_node_t*) malloc(sizeof(double_node_t));
+    double_node_t* new_node = (double_node_t*) malloc(Length*sizeof(double_node_t));
     if(!new_node)
         return NULL;
 
@@ -222,7 +224,7 @@ void list_print(double_list_t* list)
 
     while(node != NULL)
     {
-        printf("Current node  value: %s, At position %d.\n", node->val, index);
+        printf("Current node  value: %s, At position %d.\n", (char*)node->val, index);
         node = node->next;
         index++;
     }
