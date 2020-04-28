@@ -1,11 +1,3 @@
-// List: 
-// Node: A
-// Node: B
-// Node: C
-// A -> B -> C
-// Head (Anfang): A
-// Tail (Ende): C
-// len: 3
 
 #ifndef SingleLinkedList_H
 #define SingleLinkedList_H
