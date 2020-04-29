@@ -1,19 +1,14 @@
-DEBUG ?= 1
-ifeq ($(DEBUG), 1)
-    CFLAGS = -g3
-	EXECUTABLE = MainDebug
-else
-    CFLAGS = -O2
-	EXECUTABLE = MainRelease
-endif
+release: Main.o DynamicArray.o
+	gcc Main.o DynamicArray.o -o MainRelease
 
-CC = gcc $(CFLAGS)
-OBJECTS = Main.o SingleLinkedList.o
+debug: Main.o DynamicArray.o
+	gcc Main.o DynamicArray.o -g3 -o MainDebug
 
-all: $(EXECUTABLE)
+Main.o: Main.c
+	gcc -c Main.c
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) -o $@ $^
+DynamicArray.o: DynamicArray.c 
+	gcc -c DynamicArray.c
 
-%.o: %.c
-	$(CC) -c $<
+clean:
+	rm *.o

@@ -7,7 +7,7 @@
 
 #define Length 16
 
-double_list_t* list_new()
+double_list_t* create_list()
 {
     double_list_t* new_list = (double_list_t*) malloc(Length*sizeof(double_list_t));
     if(!new_list)
@@ -20,7 +20,7 @@ double_list_t* list_new()
     return new_list;
 }
 
-double_node_t* node_new(void* val)
+double_node_t* create_node(void* val)
 {
     double_node_t* new_node = (double_node_t*) malloc(Length*sizeof(double_node_t));
     if(!new_node)
@@ -33,7 +33,7 @@ double_node_t* node_new(void* val)
     return new_node;
 }
 
-void list_rpush(double_list_t* list, double_node_t* node)
+void list_right_push(double_list_t* list, double_node_t* node)
 {
     if(!node || !list)
         return;
@@ -56,7 +56,7 @@ void list_rpush(double_list_t* list, double_node_t* node)
     list->len++;
 }
 
-void list_rpop(double_list_t* list)
+void list_right_pop(double_list_t* list)
 {
     if(!list || list->len == 0)
         return;
@@ -77,7 +77,7 @@ void list_rpop(double_list_t* list)
     list->len--;
 }
 
-void list_lpush(double_list_t* list, double_node_t* node)
+void list_left_push(double_list_t* list, double_node_t* node)
 {
     if(!list || !node)
         return;
@@ -100,7 +100,7 @@ void list_lpush(double_list_t* list, double_node_t* node)
     list->len++;   
 }
 
-void list_lpop(double_list_t* list)
+void list_left_pop(double_list_t* list)
 {
     double_node_t* node = list->head;
 
@@ -121,7 +121,7 @@ void list_lpop(double_list_t* list)
     list->len--;
 }
 
-double_node_t* list_find(double_list_t* list, void* val)
+double_node_t* finde_node(double_list_t* list, void* val)
 {
     if(!list)
         return NULL;
@@ -141,7 +141,7 @@ double_node_t* list_find(double_list_t* list, void* val)
     return NULL;
 }
 
-double_node_t* list_at(double_list_t* list, int index)
+double_node_t* node_at_index(double_list_t* list, int index)
 {
     if(!list || index < 0 || index >= list->len)
         return NULL;
@@ -163,7 +163,7 @@ double_node_t* list_at(double_list_t* list, int index)
     return NULL;
 }
 
-void list_empty(double_list_t* list)
+void empty_list(double_list_t* list)
 {
     if(!list)
         return;
@@ -186,7 +186,7 @@ void list_empty(double_list_t* list)
     list->tail = NULL;
 }
 
-void list_remove(double_list_t* list, double_node_t* node)
+void remove_node(double_list_t* list, double_node_t* node)
 {
     if(!list || !node)
         return;
@@ -213,7 +213,7 @@ void list_remove(double_list_t* list, double_node_t* node)
     list->len--;
 }
 
-void list_print(double_list_t* list)
+void ConsoleD(double_list_t* list)
 {
     if(!list)
         return;

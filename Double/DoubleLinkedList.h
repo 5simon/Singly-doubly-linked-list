@@ -15,20 +15,94 @@ typedef struct double_list
     unsigned int len;
 } double_list_t;
 
-double_list_t* list_new();
-double_node_t* node_new(void* val);
 
-void list_rpush(double_list_t* list, double_node_t* node);
-void list_rpop(double_list_t* list);
+       /*
+        *Return Type: double_list_t*
+        *Name: create_list
+        *Parameters: null
+        *Declaration
+        */
+double_list_t* create_list();
 
-void list_lpush(double_list_t* list, double_node_t* node);
-void list_lpop(double_list_t* list);
+        /*
+        *Return Type: double_node_t*
+        *Name: create_node
+        *Parameters: void* val
+        *Declaration
+        */
 
-double_node_t* list_find(double_list_t* list, void* val);
-double_node_t* list_at(double_list_t* list, int index);
+double_node_t* create_node(void* val);
 
-void list_empty(double_list_t* list);
-void list_remove(double_list_t* list, double_node_t* node);
-void list_print(double_list_t* list);
+        /*
+        *Return Type: void
+        *Name: list_right_push
+        *Parameters: double_list_t* list, double_node_t* node
+        *Declaration
+        */
+void list_right_push(double_list_t* list, double_node_t* node);
+       
+        /*
+        *Return Type: void
+        *Name: list_right_pop
+        *Parameters: double_list_t* list
+        *Declaration
+        */
+void list_right_pop(double_list_t* list);
+
+        /*
+        *Return Type: void
+        *Name: list_left_push
+        *Parameters: double_list_t* list, double_node_t* node
+        *Declaration
+        */
+void list_left_push(double_list_t* list, double_node_t* node);
+
+        /*
+        *Return Type: void
+        *Name: list_left_pop
+        *Parameters: double_list_t* list
+        *Declaration
+        */
+void list_left_pop(double_list_t* list);
+
+        /*
+        *Return Type: double_node_t*
+        *Name: finde_node
+        *Parameters: double_list_t* list, void* val
+        *Declaration
+        */
+double_node_t* finde_node(double_list_t* list, void* val);
+
+        /*
+        *Return Type: double_node_t*
+        *Name: node_at_index
+        *Parameters: double_list_t* list, int index
+        *Declaration
+        */
+double_node_t* node_at_index(double_list_t* list, int index);
+
+        /*
+        *Return Type: void
+        *Name: empty_list
+        *Parameters: double_list_t* list
+        *Declaration
+        */
+void empty_list(double_list_t* list);
+
+        /*
+        *Return Type: void
+        *Name: remove_node
+        *Parameters: double_list_t* list, double_node_t* node
+        *Declaration
+        */
+void remove_node(double_list_t* list, double_node_t* node);
+
+        /*
+        *Return Type: void
+        *Name: ConsoleD
+        *Parameters: double_list_t* list
+        *Declaration
+        */
+void ConsoleD(double_list_t* list);
 
 #endif

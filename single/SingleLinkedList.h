@@ -2,6 +2,9 @@
 #ifndef SingleLinkedList_H
 #define SingleLinkedList_H
 
+#define GREEN "\033[1;32m"
+#define RESET "\033[1m"
+
 typedef struct single_node
 {
     struct single_node* next;
@@ -15,17 +18,84 @@ typedef struct single_list
     unsigned int len;
 } single_list_t;
 
-single_list_t* list_new();
-single_node_t* node_new(void* val);
+        /*
+        *Return Type: single_list_t*
+        *Name: create_list
+        *Parameters: null
+        *Declaration
+        */
+single_list_t* create_list();
 
+        /*
+        *Return Type: single_node_t*
+        *Name: create_node
+        *Parameters: void* val
+        *Declaration
+        */
+single_node_t* create_node(void* val);
+
+        /*
+        *Return Type: single_node_t*
+        *Name: find_prev_node
+        *Parameters: single_list_t* list, single_node_t* node
+        *Declaration
+        */
 single_node_t* find_prev_node(single_list_t* list, single_node_t* node);
-void list_rpush(single_list_t* list, single_node_t* node);
-void list_rpop(single_list_t* list);
-single_node_t* list_find(single_list_t* list, void* val);
-single_node_t* list_at(single_list_t* list, int index);
+        
+        /*
+        *Return Type: void
+        *Name: list_right_push
+        *Parameters: single_list_t* list, single_node_t* node
+        *Declaration
+        */
+void list_right_push(single_list_t* list, single_node_t* node);
 
-void list_empty(single_list_t* list);
-void list_remove(single_list_t* list, single_node_t* node);
-void list_print(single_list_t* list);
+        /*
+        *Return Type: void
+        *Name: list_right_pop
+        *Parameters: single_list_t* list
+        *Declaration
+        */
+void list_right_pop(single_list_t* list);
+
+        /*
+        *Return Type: single_node_t*
+        *Name: finde_node
+        *Parameters: single_list_t* list, void* val
+        *Declaration
+        */
+single_node_t* finde_node(single_list_t* list, void* val);
+
+        /*
+        *Return Type: single_node_t*
+        *Name: node_at_index
+        *Parameters: single_list_t* list, int index
+        *Declaration
+        */
+single_node_t* node_at_index(single_list_t* list, int index);
+
+        /*
+        *Return Type: void
+        *Name: empty_list
+        *Parameters: single_list_t* list
+        *Declaration
+        */
+void empty_list(single_list_t* list);
+
+        /*
+        *Return Type: void
+        *Name: remove_node
+        *Parameters: single_list_t* list, single_node_t* node
+        *Declaration
+        */
+void remove_node(single_list_t* list, single_node_t* node);
+
+        /*
+        *Return Type: void
+        *Name: Console
+        *Parameters: single_list_t* list)
+        *Declaration
+        */
+void ConsoleS(single_list_t* list);
 
 #endif

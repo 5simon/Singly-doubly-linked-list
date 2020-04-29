@@ -1,0 +1,40 @@
+{  
+    "version": "2.0.0", 
+    "tasks": [
+        {
+            "label": "Release",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}Release"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Debug",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "${file}",
+                "-g3",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}Debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}

@@ -1,23 +1,24 @@
 #include <stdio.h>
-#include <math.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
 
 #include "SingleLinkedList.h"
 
+
 int main()
-{
-    single_list_t* list = list_new();
+{   //creat a new list
+    single_list_t* list = create_list();
 
-    single_node_t* a = node_new("a");
-    single_node_t* b = node_new("b");
-    single_node_t* c = node_new("c");
+    //creat new nods 
+    single_node_t* a = create_node("a");
+    single_node_t* b = create_node("b");
+    single_node_t* c = create_node("c");
 
-    // a b c
-    list_rpush(list, a);
-    list_rpush(list, b);
-    list_rpush(list, c);
+    // insert new the nods in the list
+    list_right_push(list, a);
+    list_right_push(list, b);
+    list_right_push(list, c);
 
     // Assertions
     assert(a == list->head);
@@ -25,53 +26,54 @@ int main()
     assert(c == list->tail);
     assert(3 == list->len);
 
-    // empty
-    list_empty(list);
+    // empty the list from the nodes
+    empty_list(list);
 
     // Assertions
     assert(NULL == list->head);
     assert(NULL == list->tail);
     assert(0 == list->len);
 
-    single_node_t* d = node_new("d");
-    single_node_t* e = node_new("e");
-    single_node_t* f = node_new("f");
+    // create new 3 nodes 
+    single_node_t* d = create_node("d");
+    single_node_t* e = create_node("e");
+    single_node_t* f = create_node("f");
 
-    // d e f
-    list_rpush(list, d);
-    list_rpush(list, e);
-    list_rpush(list, f);
+    // again instert to the list above 
+    list_right_push(list, d);
+    list_right_push(list, e);
+    list_right_push(list, f);
 
-    // d e 
-    list_remove(list, f);
+    // empty the list by remove of single nodes
 
-    // Assertions
-    assert(d == list->head);
-    assert(e == list->tail);
+    remove_node(list, f);
+    
     assert(2 == list->len);
-
-    // Search for the value "d"
-    single_node_t* result_find = list_find(list, "e");
+    assert(e == list->tail);
+    assert(d == list->head);
+    // finde a node by value
+    single_node_t* result_find = finde_node(list, "e");
     if (result_find != NULL)
     {
-        printf("Element %s is in the list\n",(char*) result_find->val);
+        printf(GREEN"Element %s is in the list\n"RESET, (char*)result_find->val);
     }
     else
     {
-        printf("Element %s is not in the list!\n", (char*)result_find->val);
-    }
-
-    int index = 2;
-    single_node_t* result_at = list_at(list, index);
-    if (result_at != NULL)
-    {
-        printf("Index %d has the value of %s\n", index, (char*)result_at->val);
-    }
-    else
-    {
-        printf("Index %d is out of bounds\n", index);
+        printf(GREEN"Element %s is not in the list!\n"RESET, (char*)result_find->val);
     }
     
+    //finde a node by index
+    int index = 2;
+    single_node_t* result_at = node_at_index(list, index);
+    if (result_at != NULL)
+    {
+        printf(GREEN"Index %d has the value of %s\n"RESET, index, (char*)result_at->val);
+    }
+    else
+    {
+        printf(GREEN"Index %d is out of bounds\n"RESET, index);
+    }
+    ConsoleS(list);
 
     return 0;
 }

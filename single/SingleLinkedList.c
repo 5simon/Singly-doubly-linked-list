@@ -4,13 +4,24 @@
 #include <string.h>
 
 #include "SingleLinkedList.h"
+
 #define LENGTH 16
-single_list_t* list_new()
+
+//some colors for terminal texts
+#define RED "\033[1;31m"  
+#define BLUE "\033[1;34m"
+#define GREEN "\033[1;32m"
+#define RESET "\033[1m"
+
+
+//define
+single_list_t* create_list()
 {
     single_list_t* new_list = (single_list_t*) malloc(LENGTH*sizeof(single_list_t));
+    //checking if list contains a elements(node)
     if(!new_list)
-        return NULL;
-
+        return NULL; 
+    
     new_list->head = NULL;
     new_list->tail = NULL;
     new_list->len = 0;
@@ -18,7 +29,8 @@ single_list_t* list_new()
     return new_list;
 }
 
-single_node_t* node_new(void* val)
+//define
+single_node_t* create_node(void* val)
 {
     single_node_t* new_node = (single_node_t*) malloc(LENGTH*sizeof(single_node_t));
     if(!new_node)
@@ -28,8 +40,10 @@ single_node_t* node_new(void* val)
     new_node->val = val;
 
     return new_node;
+
 }
 
+//define
 single_node_t* find_prev_node(single_list_t* list, single_node_t* node)
 {
     if(!list || !node)
@@ -40,11 +54,13 @@ single_node_t* find_prev_node(single_list_t* list, single_node_t* node)
     {
         curr = curr->next;
     }
-
+    //ConsoleS(list);
     return curr;
+    
 }
 
-void list_rpush(single_list_t* list, single_node_t* node)
+//define
+void list_right_push(single_list_t* list, single_node_t* node)
 {
     if(!node || !list)
         return;
@@ -63,15 +79,14 @@ void list_rpush(single_list_t* list, single_node_t* node)
     }
 
     list->len++;
+    //ConsoleS(list);
 }
 
-void list_rpop(single_list_t* list)
+//define
+void list_right_pop(single_list_t* list)
 {
     if(!list || list->len == 0)
         return;
-
-    // A -> B (head=a, tail=b, a->next=b, b->next=null)
-    // A (head=a, tail=a, a->next=null)
 
     single_node_t* node = list->tail;
     single_node_t* prev = find_prev_node(list, node);
@@ -88,9 +103,11 @@ void list_rpop(single_list_t* list)
     }
 
     list->len--;
+    //ConsoleS(list);
 }
 
-single_node_t* list_find(single_list_t* list, void* val)
+//define
+single_node_t* finde_node(single_list_t* list, void* val)
 {
     if(!list)
         return NULL;
@@ -106,11 +123,12 @@ single_node_t* list_find(single_list_t* list, void* val)
 
         node = node->next;
     }
-
+    //ConsoleS(list);
     return NULL;
 }
 
-single_node_t* list_at(single_list_t* list, int index)
+//define
+single_node_t* node_at_index(single_list_t* list, int index)
 {
     if(!list || index < 0 || index >= list->len)
         return NULL;
@@ -128,11 +146,12 @@ single_node_t* list_at(single_list_t* list, int index)
         node = node->next;
         current_index++;
     }
-
+   // ConsoleS(list);
     return NULL;
 }
 
-void list_empty(single_list_t* list)
+//define
+void empty_list(single_list_t* list)
 {
     if(!list)
         return;
@@ -153,9 +172,11 @@ void list_empty(single_list_t* list)
     list->len = 0;
     list->head = NULL;
     list->tail = NULL;
+   // ConsoleS(list);
 }
 
-void list_remove(single_list_t* list, single_node_t* node)
+//define
+void remove_node(single_list_t* list, single_node_t* node)
 {
     if(!list || !node)
         return;
@@ -172,18 +193,19 @@ void list_remove(single_list_t* list, single_node_t* node)
     list->len--;
 }
 
-void list_print(single_list_t* list)
+//define
+void ConsoleS(single_list_t* list)
 {
     if(!list)
         return;
 
     int index = 0;
     single_node_t* node = list->head;
-    printf("\nPrinting SingleLinkedList that contains %d elements.\n", list->len);
+    printf(RED"\nPrinting SingleLinkedList that contains %d elements.\n"RESET, list->len);
 
     while(node != NULL)
     {
-        printf("Current node  value: %s, At position %d.\n", (char*)node->val, index);
+        printf(BLUE"Current node  value: %s, At position %d.\n"RESET, (char*)node->val, index);
         node = node->next;
         index++;
     }
