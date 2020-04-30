@@ -24,7 +24,7 @@ typedef struct single_list
         *Parameters: null
         *Declaration
         */
-single_list_t* create_list();
+single_list_t* create_list_S();
 
         /*
         *Return Type: single_node_t*
@@ -32,7 +32,7 @@ single_list_t* create_list();
         *Parameters: void* val
         *Declaration
         */
-single_node_t* create_node(void* val);
+single_node_t* create_node_S(void* val);
 
         /*
         *Return Type: single_node_t*
@@ -40,7 +40,7 @@ single_node_t* create_node(void* val);
         *Parameters: single_list_t* list, single_node_t* node
         *Declaration
         */
-single_node_t* find_prev_node(single_list_t* list, single_node_t* node);
+single_node_t* find_prev_node_S(single_list_t* list, single_node_t* node);
         
         /*
         *Return Type: void
@@ -48,7 +48,7 @@ single_node_t* find_prev_node(single_list_t* list, single_node_t* node);
         *Parameters: single_list_t* list, single_node_t* node
         *Declaration
         */
-void list_right_push(single_list_t* list, single_node_t* node);
+void list_right_push_S(single_list_t* list, single_node_t* node);
 
         /*
         *Return Type: void
@@ -56,7 +56,7 @@ void list_right_push(single_list_t* list, single_node_t* node);
         *Parameters: single_list_t* list
         *Declaration
         */
-void list_right_pop(single_list_t* list);
+void list_right_pop_S(single_list_t* list);
 
         /*
         *Return Type: single_node_t*
@@ -64,7 +64,7 @@ void list_right_pop(single_list_t* list);
         *Parameters: single_list_t* list, void* val
         *Declaration
         */
-single_node_t* finde_node(single_list_t* list, void* val);
+single_node_t* finde_node_S(single_list_t* list, void* val);
 
         /*
         *Return Type: single_node_t*
@@ -72,7 +72,7 @@ single_node_t* finde_node(single_list_t* list, void* val);
         *Parameters: single_list_t* list, int index
         *Declaration
         */
-single_node_t* node_at_index(single_list_t* list, int index);
+single_node_t* node_at_index_S(single_list_t* list, int index);
 
         /*
         *Return Type: void
@@ -80,7 +80,7 @@ single_node_t* node_at_index(single_list_t* list, int index);
         *Parameters: single_list_t* list
         *Declaration
         */
-void empty_list(single_list_t* list);
+void empty_list_S(single_list_t* list);
 
         /*
         *Return Type: void
@@ -88,7 +88,7 @@ void empty_list(single_list_t* list);
         *Parameters: single_list_t* list, single_node_t* node
         *Declaration
         */
-void remove_node(single_list_t* list, single_node_t* node);
+void remove_node_S(single_list_t* list, single_node_t* node);
 
         /*
         *Return Type: void

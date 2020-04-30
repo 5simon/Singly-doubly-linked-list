@@ -8,16 +8,18 @@
 
 int main()
 {
-    double_list_t* list = create_list();
+    //create list
+    double_list_t* list = create_list_D();
 
-    double_node_t* a = create_node("a");
-    double_node_t* b = create_node("b");
-    double_node_t* c = create_node("c");
+    // create nodes
+    double_node_t* a = create_node_D("a");
+    double_node_t* b = create_node_D("b");
+    double_node_t* c = create_node_D("c");
 
-    // a b c
-    list_right_push(list, a);
-    list_right_push(list, b);
-    list_right_push(list, c);
+    //insert the nodes to the list
+    list_right_push_D(list, a);
+    list_right_push_D(list, b);
+    list_right_push_D(list, c);
     
     // Assertions
     assert(a == list->head);
@@ -25,24 +27,56 @@ int main()
     assert(c == list->tail);
     assert(3 == list->len);
 
-    // empty
-    empty_list(list);
+    // empty the list
+    empty_list_D(list);
 
     // Assertions
     assert(NULL == list->head);
     assert(NULL == list->tail);
     assert(0 == list->len);
 
-    double_node_t* d = create_node("d");
-    double_node_t* e = create_node("e");
+    //create new nodes
+    double_node_t* d = create_node_D("d");
+    double_node_t* e = create_node_D("e");
+    double_node_t* f = create_node_D("f");
 
-    list_left_push(list, d);
-    list_left_push(list, e);
+    //insert the new nodes from left
+    list_left_push_D(list, d);
+    list_left_push_D(list, e);
+    list_left_push_D(list, f);
 
-    // E D
-    assert(e == list->head);
+    //Assertion
+    assert(f == list->head);
+    assert(e = list->head->next);
     assert(d == list->tail);
 
+    //finde a node by value
+    double_node_t* result_find = finde_node_D(list,"f");
+    if(result_find != NULL)
+    {   
+        printf(GREEN"the node, it has (%s) as value  is in the list\n"RESET,(char*)result_find->val);
+    }
+    else
+    {
+        printf(GREEN"ther is no node contain a (%s)\n"RESET,(char*)result_find->val);
+    }
+    
+    //finde a node by index
+    int index = 4;
+    double_node_t* result_at = node_at_index_D(list,index);
+    if(result_at != NULL)
+    {
+
+        printf(GREEN"at the index (%d) we have a node contain this value(%s)"RESET,index,(char*)result_at->val);
+
+    }
+    else
+    {
+        printf(GREEN"at this index (%d) we have not node"RESET,index);
+    }
+
+    
+    //print it  
     ConsoleD(list);
 
     return 0;

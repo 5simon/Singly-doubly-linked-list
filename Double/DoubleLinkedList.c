@@ -7,7 +7,13 @@
 
 #define Length 16
 
-double_list_t* create_list()
+//some colors for terminal texts
+#define RED "\033[1;31m"  
+#define BLUE "\033[1;34m"
+#define GREEN "\033[1;32m"
+#define RESET "\033[1m"
+
+double_list_t* create_list_D()
 {
     double_list_t* new_list = (double_list_t*) malloc(Length*sizeof(double_list_t));
     if(!new_list)
@@ -20,7 +26,7 @@ double_list_t* create_list()
     return new_list;
 }
 
-double_node_t* create_node(void* val)
+double_node_t* create_node_D(void* val)
 {
     double_node_t* new_node = (double_node_t*) malloc(Length*sizeof(double_node_t));
     if(!new_node)
@@ -33,7 +39,7 @@ double_node_t* create_node(void* val)
     return new_node;
 }
 
-void list_right_push(double_list_t* list, double_node_t* node)
+void list_right_push_D(double_list_t* list, double_node_t* node)
 {
     if(!node || !list)
         return;
@@ -56,7 +62,7 @@ void list_right_push(double_list_t* list, double_node_t* node)
     list->len++;
 }
 
-void list_right_pop(double_list_t* list)
+void list_right_pop_D(double_list_t* list)
 {
     if(!list || list->len == 0)
         return;
@@ -77,7 +83,7 @@ void list_right_pop(double_list_t* list)
     list->len--;
 }
 
-void list_left_push(double_list_t* list, double_node_t* node)
+void list_left_push_D(double_list_t* list, double_node_t* node)
 {
     if(!list || !node)
         return;
@@ -100,7 +106,7 @@ void list_left_push(double_list_t* list, double_node_t* node)
     list->len++;   
 }
 
-void list_left_pop(double_list_t* list)
+void list_left_pop_D(double_list_t* list)
 {
     double_node_t* node = list->head;
 
@@ -121,7 +127,7 @@ void list_left_pop(double_list_t* list)
     list->len--;
 }
 
-double_node_t* finde_node(double_list_t* list, void* val)
+double_node_t* finde_node_D(double_list_t* list, void* val)
 {
     if(!list)
         return NULL;
@@ -141,7 +147,7 @@ double_node_t* finde_node(double_list_t* list, void* val)
     return NULL;
 }
 
-double_node_t* node_at_index(double_list_t* list, int index)
+double_node_t* node_at_index_D(double_list_t* list, int index)
 {
     if(!list || index < 0 || index >= list->len)
         return NULL;
@@ -163,7 +169,7 @@ double_node_t* node_at_index(double_list_t* list, int index)
     return NULL;
 }
 
-void empty_list(double_list_t* list)
+void empty_list_D(double_list_t* list)
 {
     if(!list)
         return;
@@ -186,7 +192,7 @@ void empty_list(double_list_t* list)
     list->tail = NULL;
 }
 
-void remove_node(double_list_t* list, double_node_t* node)
+void remove_node_D(double_list_t* list, double_node_t* node)
 {
     if(!list || !node)
         return;
@@ -220,11 +226,11 @@ void ConsoleD(double_list_t* list)
 
     int index = 0;
     double_node_t* node = list->head;
-    printf("\nPrinting DoubleLinkedList that contains %d elements.\n", list->len);
+    printf(RED"\nPrinting DoubleLinkedList that contains %d elements.\n"RESET, list->len);
 
     while(node != NULL)
     {
-        printf("Current node  value: %s, At position %d.\n", (char*)node->val, index);
+        printf(BLUE"Current node  value: %s, At position %d.\n"RESET, (char*)node->val, index);
         node = node->next;
         index++;
     }

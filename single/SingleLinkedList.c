@@ -15,7 +15,7 @@
 
 
 //define
-single_list_t* create_list()
+single_list_t* create_list_S()
 {
     single_list_t* new_list = (single_list_t*) malloc(LENGTH*sizeof(single_list_t));
     //checking if list contains a elements(node)
@@ -30,7 +30,7 @@ single_list_t* create_list()
 }
 
 //define
-single_node_t* create_node(void* val)
+single_node_t* create_node_S(void* val)
 {
     single_node_t* new_node = (single_node_t*) malloc(LENGTH*sizeof(single_node_t));
     if(!new_node)
@@ -44,7 +44,7 @@ single_node_t* create_node(void* val)
 }
 
 //define
-single_node_t* find_prev_node(single_list_t* list, single_node_t* node)
+single_node_t* find_prev_node_S(single_list_t* list, single_node_t* node)
 {
     if(!list || !node)
         return NULL;
@@ -60,7 +60,7 @@ single_node_t* find_prev_node(single_list_t* list, single_node_t* node)
 }
 
 //define
-void list_right_push(single_list_t* list, single_node_t* node)
+void list_right_push_S(single_list_t* list, single_node_t* node)
 {
     if(!node || !list)
         return;
@@ -83,13 +83,13 @@ void list_right_push(single_list_t* list, single_node_t* node)
 }
 
 //define
-void list_right_pop(single_list_t* list)
+void list_right_pop_S(single_list_t* list)
 {
     if(!list || list->len == 0)
         return;
 
     single_node_t* node = list->tail;
-    single_node_t* prev = find_prev_node(list, node);
+    single_node_t* prev = find_prev_node_S(list, node);
 
     if(list->len > 1)
     {
@@ -107,7 +107,7 @@ void list_right_pop(single_list_t* list)
 }
 
 //define
-single_node_t* finde_node(single_list_t* list, void* val)
+single_node_t* finde_node_S(single_list_t* list, void* val)
 {
     if(!list)
         return NULL;
@@ -128,7 +128,7 @@ single_node_t* finde_node(single_list_t* list, void* val)
 }
 
 //define
-single_node_t* node_at_index(single_list_t* list, int index)
+single_node_t* node_at_index_S(single_list_t* list, int index)
 {
     if(!list || index < 0 || index >= list->len)
         return NULL;
@@ -151,7 +151,7 @@ single_node_t* node_at_index(single_list_t* list, int index)
 }
 
 //define
-void empty_list(single_list_t* list)
+void empty_list_S(single_list_t* list)
 {
     if(!list)
         return;
@@ -176,12 +176,12 @@ void empty_list(single_list_t* list)
 }
 
 //define
-void remove_node(single_list_t* list, single_node_t* node)
+void remove_node_S(single_list_t* list, single_node_t* node)
 {
     if(!list || !node)
         return;
 
-    single_node_t* prev = find_prev_node(list, node);
+    single_node_t* prev = find_prev_node_S(list, node);
     prev->next = node->next;
 
     if(node == list->tail)
