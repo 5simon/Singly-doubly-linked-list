@@ -1,19 +1,14 @@
-DEBUG ?= 1
-ifeq ($(DEBUG), 1)
-    CFLAGS = -g3
-	EXECUTABLE = MainDebug
-else
-    CFLAGS = -O2
-	EXECUTABLE = MainRelease
-endif
+release: Main.o DoubleLinkedList.o
+	gcc Main.o DoubleLinkedList.o -o Double.o
 
-CC = gcc $(CFLAGS)
-OBJECTS = Main.o DoubleLinkedList.o
+debug: Main.o DoubleLinkedList.o
+	gcc Main.o DoubleLinkedList.o -g3 -o Double.o
 
-all: $(EXECUTABLE)
+Main.o: Main.c
+	gcc -c Main.c
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) -o $@ $^
+DoubleLinkedList.o: DoubleLinkedList.c 
+	gcc -c DoubleLinkedList.c
 
-%.o: %.c
-	$(CC) -c $<
+clean:
+	rm *.o

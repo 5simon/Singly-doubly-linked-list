@@ -6,7 +6,7 @@
 #include "SingleLinkedList.h"
 
 
-int main()
+int main(int argc, char *argv[])
 {   //creat a new list
     single_list_t* list = create_list_S();
 

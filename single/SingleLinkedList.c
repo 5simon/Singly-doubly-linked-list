@@ -205,7 +205,7 @@ void ConsoleS(single_list_t* list)
 
     while(node != NULL)
     {
-        printf(BLUE"Current node  value: %s, At position %d.\n"RESET, (char*)node->val, index);
+        printf(BLUE"Current node  value: %s, At position %d.\n"RESET, (char*)node->val, index + 1);
         node = node->next;
         index++;
     }

@@ -1,14 +1,14 @@
-release: Main.o DynamicArray.o
-	gcc Main.o DynamicArray.o -o MainRelease
+release: Main.o SingleLinkedList.o
+	gcc Main.o SingleLinkedList.o -o Single.o
 
-debug: Main.o DynamicArray.o
-	gcc Main.o DynamicArray.o -g3 -o MainDebug
+debug: Main.o SingleLinkedList.o
+	gcc Main.o SingleLinkedList.o -g3 -o Single.o
 
 Main.o: Main.c
 	gcc -c Main.c
 
-DynamicArray.o: DynamicArray.c 
-	gcc -c DynamicArray.c
+SingleLinkedList.o: SingleLinkedList.c 
+	gcc -c SingleLinkedList.c
 
 clean:
 	rm *.o
