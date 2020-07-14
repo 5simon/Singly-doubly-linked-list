@@ -5,7 +5,6 @@
 
 #include "DoubleLinkedList.h"
 
-#define Length 16
 
 //some colors for terminal texts
 #define RED "\033[1;31m"  
@@ -15,7 +14,7 @@
 
 double_list_t* create_list_D()
 {
-    double_list_t* new_list = (double_list_t*) malloc(Length*sizeof(double_list_t));
+    double_list_t* new_list = (double_list_t*) malloc(sizeof(double_list_t));
     if(!new_list)
         return NULL;
 
@@ -28,7 +27,7 @@ double_list_t* create_list_D()
 
 double_node_t* create_node_D(void* val)
 {
-    double_node_t* new_node = (double_node_t*) malloc(Length*sizeof(double_node_t));
+    double_node_t* new_node = (double_node_t*) malloc(sizeof(double_node_t));
     if(!new_node)
         return NULL;
 
@@ -169,7 +168,7 @@ double_node_t* node_at_index_D(double_list_t* list, int index)
     return NULL;
 }
 
-void empty_list_D(double_list_t* list)
+void delete_list_D(double_list_t* list)
 {
     if(!list)
         return;
@@ -231,7 +230,9 @@ void ConsoleD(double_list_t* list)
     while(node != NULL)
     {
         printf(BLUE"Current node  value: %s, At position %d.\n"RESET, (char*)node->val, index + 1);
+        //printf("|%s| ->",(char*)node->val);
         node = node->next;
         index++;
     }
+    //printf("\n");
 }

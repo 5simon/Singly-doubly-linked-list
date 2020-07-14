@@ -90,7 +90,7 @@ double_node_t* node_at_index_D(double_list_t* list, int index);
         *Parameters: double_list_t* list
         *Declaration
         */
-void empty_list_D(double_list_t* list);
+void delete_list_D(double_list_t* list);
 
         /*
         *Return Type: void

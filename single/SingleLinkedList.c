@@ -5,7 +5,6 @@
 
 #include "SingleLinkedList.h"
 
-#define LENGTH 16
 
 //some colors for terminal texts
 #define RED "\033[1;31m"  
@@ -17,7 +16,7 @@
 //define
 single_list_t* create_list_S()
 {
-    single_list_t* new_list = (single_list_t*) malloc(LENGTH*sizeof(single_list_t));
+    single_list_t* new_list = (single_list_t*) malloc(sizeof(single_list_t));
     //checking if list contains a elements(node)
     if(!new_list)
         return NULL; 
@@ -32,7 +31,7 @@ single_list_t* create_list_S()
 //define
 single_node_t* create_node_S(void* val)
 {
-    single_node_t* new_node = (single_node_t*) malloc(LENGTH*sizeof(single_node_t));
+    single_node_t* new_node = (single_node_t*) malloc(sizeof(single_node_t));
     if(!new_node)
         return NULL;
 
@@ -151,7 +150,7 @@ single_node_t* node_at_index_S(single_list_t* list, int index)
 }
 
 //define
-void empty_list_S(single_list_t* list)
+void delete_list_S(single_list_t* list)
 {
     if(!list)
         return;

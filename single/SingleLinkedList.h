@@ -80,7 +80,7 @@ single_node_t* node_at_index_S(single_list_t* list, int index);
         *Parameters: single_list_t* list
         *Declaration
         */
-void empty_list_S(single_list_t* list);
+void delete_list_S(single_list_t* list);
 
         /*
         *Return Type: void

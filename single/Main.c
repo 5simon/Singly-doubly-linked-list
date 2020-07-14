@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     assert(3 == list->len);
 
     // empty the list from the nodes
-    empty_list_S(list);
+    delete_list_S(list);
 
     // Assertions
     assert(NULL == list->head);

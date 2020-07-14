@@ -20,15 +20,16 @@ int main()
     list_right_push_D(list, a);
     list_right_push_D(list, b);
     list_right_push_D(list, c);
-    
+
     // Assertions
     assert(a == list->head);
     assert(b == list->tail->prev);
     assert(c == list->tail);
     assert(3 == list->len);
 
+    ConsoleD(list);
     // empty the list
-    empty_list_D(list);
+    delete_list_D(list);
 
     // Assertions
     assert(NULL == list->head);
