@@ -9,22 +9,31 @@
 int main(int argc, char *argv[])
 {   //creat a new list
     single_list_t* list = create_list_S();
-
+    single_list_t* number = create_list_S();
     //creat new nods 
     single_node_t* a = create_node_S("a");
     single_node_t* b = create_node_S("b");
     single_node_t* c = create_node_S("c");
 
+    single_node_t* one = create_node_S("1");
+    single_node_t* two = create_node_S("2"); 
+    single_node_t* three = create_node_S("3");
     // insert new the nods in the list
     list_right_push_S(list, a);
     list_right_push_S(list, b);
     list_right_push_S(list, c);
-
     // Assertions
     assert(a == list->head);
     assert(b == list->head->next);
     assert(c == list->tail);
     assert(3 == list->len);
+    //ConsoleS(list);
+    //list1
+    list_right_push_S(number, one);
+    list_right_push_S(number, two);
+    List_at_second_push_S(number, three);
+    ConsoleS(number);
+
 
     // empty the list from the nodes
     delete_list_S(list);

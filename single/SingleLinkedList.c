@@ -82,6 +82,26 @@ void list_right_push_S(single_list_t* list, single_node_t* node)
 }
 
 //define
+void List_at_second_push_S(single_list_t* list, single_node_t* node)
+{
+    if(!list || !node)
+        return;
+    if(list->len > 0)
+    {
+        node->next = list->tail;
+        list->head->next = node;
+    }
+    else
+    {
+        node->next = NULL;
+        list->head = node;
+        list->tail = node;
+    }
+    
+    list->len++;
+}
+
+//define
 void list_right_pop_S(single_list_t* list)
 {
     if(!list || list->len == 0)

@@ -60,7 +60,24 @@ void list_right_push_D(double_list_t* list, double_node_t* node)
 
     list->len++;
 }
-
+void List_at_second_push_D(double_list_t* list, double_node_t* node)
+{
+    if(!list || !node)
+        return;
+    if(list->len > 0)
+    {
+        node->next = list->tail;
+        list->head->next = node;
+    }
+    else
+    {
+        node->next = NULL;
+        list->head = node;
+        list->tail = node;
+    }
+    
+    list->len++;
+}
 void list_right_pop_D(double_list_t* list)
 {
     if(!list || list->len == 0)
