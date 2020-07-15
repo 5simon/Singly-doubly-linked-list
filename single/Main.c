@@ -38,7 +38,17 @@ int main(int argc, char *argv[])
     list_right_push_S(number, three);
     list_right_push_S(number, four);
     list_right_push_S(number, five);
-    List_at_middle_push_S(number,six,4);
+    int index1 = 2;
+    if(index1 < number->len)
+    {
+        List_at_middle_push_S(number,six,index1);
+    }
+    else
+    {
+        printf("index can't be greater than %d\n", number->len);
+    }
+    
+
     ConsoleS(number);
 
 

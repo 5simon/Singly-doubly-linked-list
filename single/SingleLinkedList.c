@@ -88,30 +88,37 @@ void List_at_middle_push_S(single_list_t* list, single_node_t* node, int index)
         return;
     
     single_node_t* temp;
-    if(list->len > 0)
-    {   
-        node->next == NULL;
-        temp = list->head;
+    int current_index = 0;
 
-        for (int i = 0; i < index-2; i++)
+
+        if(list->len > 0)
+        {   
+            node->next == NULL;
+            temp = list->head;
+
+            for (int i = 0; i < index-2; i++)
+            {
+                temp = temp->next;
+                if(temp == NULL)
+                    return;
+            }     
+            if(temp != NULL)
+            {
+                node->next = temp->next;
+                temp->next = node;
+            }    
+        } 
+        else
         {
-            temp = temp->next;
-            if(temp == NULL)
-                return;
-        }     
-        if(temp != NULL)
-        {
-            node->next = temp->next;
-            temp->next = node;
-        }    
-    } 
-    else
-    {
-        node->next = NULL;
-        list->head = node;
-        list->tail = node;
-    }
+            node->next = NULL;
+            list->head = node;
+            list->tail = node;
+        }
+        current_index++;
+    
+   
     list->len++;
+
 }
 
 //define
