@@ -93,6 +93,7 @@ void List_at_middle_push_D(double_list_t* list, double_node_t* node,int index)
     }
     
     list->len++;
+
 }
 //Define
 void list_right_pop_D(double_list_t* list)

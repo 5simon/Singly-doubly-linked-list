@@ -45,8 +45,10 @@ int main()
 
     ConsoleD(list);
     //insert the nodes in names
+    
     List_at_middle_push_D(names,name1,4);
     List_at_middle_push_D(names,name3,2);    
+    List_at_middle_push_D(names,name4,3);    
     ConsoleD(names);
     // empty the list
     delete_list_D(list);
