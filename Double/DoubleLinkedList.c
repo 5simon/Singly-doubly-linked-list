@@ -38,6 +38,7 @@ double_node_t* create_node_D(void* val)
     return new_node;
 }
 
+
 void list_right_push_D(double_list_t* list, double_node_t* node)
 {
     if(!node || !list)
@@ -253,7 +254,7 @@ void remove_node_D(double_list_t* list, double_node_t* node)
     list->len--;
 }
 
-void ConsoleD(double_list_t* list)
+void ConsoleD_CHAR(double_list_t* list)
 {
     if(!list)
         return;
@@ -269,5 +270,21 @@ void ConsoleD(double_list_t* list)
         node = node->next;
         index++;
     }
-    //printf("\n");
+}
+void ConsoleD_INT(double_list_t* list)
+{
+    if(!list)
+        return;
+
+    int index = 0;
+    double_node_t* node = list->head;
+    printf(RED"\nPrinting DoubleLinkedList that contains %d elements.\n"RESET, list->len);
+
+    while(node != NULL)
+    {
+        printf(BLUE"Current node  value: %d, At position %d.\n"RESET, (int*)node->val, index + 1);
+        //printf("|%s| ->",(char*)node->val);
+        node = node->next;
+        index++;
+    }
 }

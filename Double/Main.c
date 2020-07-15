@@ -19,11 +19,18 @@ int main()
     double_node_t* c = create_node_D("c");
 
     // create nodes for numbers
-    double_node_t* two = create_node_D("2"); 
-    double_node_t* one = create_node_D("1");
-    double_node_t* three = create_node_D("3");
-    double_node_t* four = create_node_D("4");
+    double_node_t* one = create_node_D(1);
+    double_node_t* two = create_node_D(2); 
+    double_node_t* three = create_node_D(3);
+    double_node_t* four = create_node_D(4);
 
+    // insert the nodes to numbers
+    list_right_push_D(number, one);
+    list_right_push_D(number, two);
+    list_right_push_D(number, three);
+    list_right_push_D(number, four);
+    ConsoleD_INT(number);
+    
     //create nodes for names
     double_node_t* name1 = create_node_D("name1");
     double_node_t* name2 = create_node_D("name2");
@@ -43,13 +50,13 @@ int main()
     assert(c == list->tail);
     assert(3 == list->len);
 
-    ConsoleD(list);
+    ConsoleD_CHAR(list);
     //insert the nodes in names
     
     List_at_middle_push_D(names,name1,4);
     List_at_middle_push_D(names,name3,2);    
     List_at_middle_push_D(names,name4,3);    
-    ConsoleD(names);
+    ConsoleD_CHAR(names);
     // empty the list
     delete_list_D(list);
 
@@ -101,7 +108,7 @@ int main()
 
     
     //print it  
-    ConsoleD(list);
+    ConsoleD_CHAR(list);
 
     return 0;
 }

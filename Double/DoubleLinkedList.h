@@ -42,6 +42,7 @@ double_node_t* create_node_D(void* val);
         *Parameters: double_list_t* list, double_node_t* node
         *Declaration
         */
+
 void list_right_push_D(double_list_t* list, double_node_t* node);
          /*
         *Return Type: void
@@ -109,10 +110,18 @@ void remove_node_D(double_list_t* list, double_node_t* node);
 
         /*
         *Return Type: void
-        *Name: ConsoleD
+        *Name: ConsoleD_CHAR
         *Parameters: double_list_t* list
         *Declaration
         */
-void ConsoleD(double_list_t* list);
+void ConsoleD_CHAR(double_list_t* list);
+
+        /*
+        *Return Type: void
+        *Name: ConsoleD_INT
+        *Parameters: double_list_t* list
+        *Declaration
+        */
+void ConsoleD_INT(double_list_t* list);
 
 #endif
