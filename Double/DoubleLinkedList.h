@@ -45,17 +45,18 @@ double_node_t* create_node_D(void* val);
 void list_right_push_D(double_list_t* list, double_node_t* node);
          /*
         *Return Type: void
-        *Name: List_middle_push_D
+        *Name: List_at_middle_push_D
         *Parameters: single_list_t* list, single_node_t* node
         *Declaration
         */
-void List_at_second_push_D(double_list_t* list, double_node_t* node);
-        /*
+void List_at_middle_push_D(double_list_t* list, double_node_t* node, int index);
+         /*
         *Return Type: void
         *Name: list_right_pop_D
-        *Parameters: double_list_t* list
+        *Parameters: single_list_t* list, single_node_t* node
         *Declaration
         */
+
 void list_right_pop_D(double_list_t* list);
 
         /*

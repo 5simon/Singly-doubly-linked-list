@@ -49,19 +49,21 @@ single_node_t* find_prev_node_S(single_list_t* list, single_node_t* node);
         *Declaration
         */
 void list_right_push_S(single_list_t* list, single_node_t* node);
+   
         /*
         *Return Type: void
-        *Name: List_middle_push_S
+        *Name: List_at_middle_push_S
         *Parameters: single_list_t* list, single_node_t* node
         *Declaration
         */
-void List_at_second_push_S(single_list_t* list, single_node_t* node);
+void List_at_middle_push_S(single_list_t* list, single_node_t* node, int index);
         /*
         *Return Type: void
         *Name: list_right_pop_S
         *Parameters: single_list_t* list
         *Declaration
         */
+
 void list_right_pop_S(single_list_t* list);
 
         /*

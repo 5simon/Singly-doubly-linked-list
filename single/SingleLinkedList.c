@@ -82,22 +82,35 @@ void list_right_push_S(single_list_t* list, single_node_t* node)
 }
 
 //define
-void List_at_second_push_S(single_list_t* list, single_node_t* node)
+void List_at_middle_push_S(single_list_t* list, single_node_t* node, int index)
 {
     if(!list || !node)
         return;
+    
+    single_node_t* temp;
     if(list->len > 0)
-    {
-        node->next = list->tail;
-        list->head->next = node;
-    }
+    {   
+        node->next == NULL;
+        temp = list->head;
+
+        for (int i = 0; i < index-2; i++)
+        {
+            temp = temp->next;
+            if(temp == NULL)
+                return;
+        }     
+        if(temp != NULL)
+        {
+            node->next = temp->next;
+            temp->next = node;
+        }    
+    } 
     else
     {
         node->next = NULL;
         list->head = node;
         list->tail = node;
     }
-    
     list->len++;
 }
 

@@ -11,25 +11,32 @@ int main()
     //create list
     double_list_t* list = create_list_D();
     double_list_t* number = create_list_D();
+    double_list_t* names = create_list_D();
     
-    // create nodes
+    // create nodes for List
     double_node_t* a = create_node_D("a");
     double_node_t* b = create_node_D("b");
     double_node_t* c = create_node_D("c");
 
-
+    // create nodes for numbers
     double_node_t* two = create_node_D("2"); 
     double_node_t* one = create_node_D("1");
     double_node_t* three = create_node_D("3");
+    double_node_t* four = create_node_D("4");
+
+    //create nodes for names
+    double_node_t* name1 = create_node_D("name1");
+    double_node_t* name2 = create_node_D("name2");
+    double_node_t* name3 = create_node_D("name3");
+    double_node_t* name4 = create_node_D("name4");
+    double_node_t* name5 = create_node_D("name5");
+
+
     //insert the nodes to the list
     list_right_push_D(list, a);
     list_right_push_D(list, b);
     list_right_push_D(list, c);
 
-    list_right_push_D(number, one);
-    list_right_push_D(number, two);
-    List_at_second_push_D(number, three);
-    ConsoleD(number);
     // Assertions
     assert(a == list->head);
     assert(b == list->tail->prev);
@@ -37,6 +44,10 @@ int main()
     assert(3 == list->len);
 
     ConsoleD(list);
+    //insert the nodes in names
+    List_at_middle_push_D(names,name1,4);
+    List_at_middle_push_D(names,name3,2);    
+    ConsoleD(names);
     // empty the list
     delete_list_D(list);
 
@@ -44,6 +55,7 @@ int main()
     assert(NULL == list->head);
     assert(NULL == list->tail);
     assert(0 == list->len);
+    
 
     //create new nodes
     double_node_t* d = create_node_D("d");

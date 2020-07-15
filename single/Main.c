@@ -18,7 +18,11 @@ int main(int argc, char *argv[])
     single_node_t* one = create_node_S("1");
     single_node_t* two = create_node_S("2"); 
     single_node_t* three = create_node_S("3");
-    // insert new the nods in the list
+    single_node_t* four = create_node_S("4");
+    single_node_t* five = create_node_S("5");
+    single_node_t* six = create_node_S("6");
+
+    // insert  the nods in the list
     list_right_push_S(list, a);
     list_right_push_S(list, b);
     list_right_push_S(list, c);
@@ -28,10 +32,13 @@ int main(int argc, char *argv[])
     assert(c == list->tail);
     assert(3 == list->len);
     //ConsoleS(list);
-    //list1
+    //numbers
     list_right_push_S(number, one);
     list_right_push_S(number, two);
-    List_at_second_push_S(number, three);
+    list_right_push_S(number, three);
+    list_right_push_S(number, four);
+    list_right_push_S(number, five);
+    List_at_middle_push_S(number,six,4);
     ConsoleS(number);
 
 
