@@ -104,6 +104,7 @@ void remove_node_S(single_list_t* list, single_node_t* node);
         *Parameters: single_list_t* list)
         *Declaration
         */
-void ConsoleS(single_list_t* list);
+void ConsoleS_char(single_list_t* list);
+void ConsoleS_int(single_list_t* list);
 
 #endif

@@ -233,7 +233,7 @@ void remove_node_S(single_list_t* list, single_node_t* node)
 }
 
 //define
-void ConsoleS(single_list_t* list)
+void ConsoleS_char(single_list_t* list)
 {
     if(!list)
         return;
@@ -245,6 +245,23 @@ void ConsoleS(single_list_t* list)
     while(node != NULL)
     {
         printf(BLUE"Current node  value: %s, At position %d.\n"RESET, (char*)node->val, index + 1);
+        node = node->next;
+        index++;
+    }
+}
+
+void ConsoleS_int(single_list_t* list)
+{
+    if(!list)
+        return;
+
+    int index = 0;
+    single_node_t* node = list->head;
+    printf(RED"\nPrinting SingleLinkedList that contains %d elements.\n"RESET, list->len);
+
+    while(node != NULL)
+    {
+        printf(BLUE"Current node  value: %d, At position %d.\n"RESET, (int*)node->val, index + 1);
         node = node->next;
         index++;
     }

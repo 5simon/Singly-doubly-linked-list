@@ -15,12 +15,12 @@ int main(int argc, char *argv[])
     single_node_t* b = create_node_S("b");
     single_node_t* c = create_node_S("c");
 
-    single_node_t* one = create_node_S("1");
-    single_node_t* two = create_node_S("2"); 
-    single_node_t* three = create_node_S("3");
-    single_node_t* four = create_node_S("4");
-    single_node_t* five = create_node_S("5");
-    single_node_t* six = create_node_S("6");
+    single_node_t* one = create_node_S(1);
+    single_node_t* two = create_node_S(2); 
+    single_node_t* three = create_node_S(3);
+    single_node_t* four = create_node_S(4);
+    single_node_t* five = create_node_S(5);
+    single_node_t* six = create_node_S(6);
 
     // insert  the nods in the list
     list_right_push_S(list, a);
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     assert(b == list->head->next);
     assert(c == list->tail);
     assert(3 == list->len);
-    //ConsoleS(list);
+    //ConsoleS_char(list);
     //numbers
     list_right_push_S(number, one);
     list_right_push_S(number, two);
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     }
     
 
-    ConsoleS(number);
+    //ConsoleS_int(number);
 
 
     // empty the list from the nodes
@@ -80,11 +80,11 @@ int main(int argc, char *argv[])
     single_node_t* result_find = finde_node_S(list, "e");
     if (result_find != NULL)
     {
-        printf(GREEN"the node, it has %s as value  is in the list\n"RESET, (char*)result_find->val);
+        //printf(GREEN"the node, it has %s as value  is in the list\n"RESET, (char*)result_find->val);
     }
     else
     {
-        printf(GREEN"Element %s is not in the list!\n"RESET, (char*)result_find->val);
+        //printf(GREEN"Element %s is not in the list!\n"RESET, (char*)result_find->val);
     }
     
     //finde a node by index
@@ -92,13 +92,13 @@ int main(int argc, char *argv[])
     single_node_t* result_at = node_at_index_S(list, index);
     if (result_at != NULL)
     {
-        printf(GREEN"Index %d has the value of %s\n"RESET, index, (char*)result_at->val);
+        //printf(GREEN"Index %d has the value of %s\n"RESET, index, (char*)result_at->val);
     }
     else
     {
-        printf(GREEN"Index %d is out of bounds\n"RESET, index);
+        //printf(GREEN"Index %d is out of bounds\n"RESET, index);
     }
-    ConsoleS(list);
+    //ConsoleS_char(list);
 
     return 0;
 }

@@ -10,7 +10,6 @@ int main()
 {
     //create list
     double_list_t* list = create_list_D();
-    double_list_t* number = create_list_D();
     double_list_t* names = create_list_D();
     
     // create nodes for List
@@ -18,26 +17,12 @@ int main()
     double_node_t* b = create_node_D("b");
     double_node_t* c = create_node_D("c");
 
-    // create nodes for numbers
-    double_node_t* one = create_node_D(1);
-    double_node_t* two = create_node_D(2); 
-    double_node_t* three = create_node_D(3);
-    double_node_t* four = create_node_D(4);
-
-    // insert the nodes to numbers
-    list_right_push_D(number, one);
-    list_right_push_D(number, two);
-    list_right_push_D(number, three);
-    list_right_push_D(number, four);
-    ConsoleD_INT(number);
-    
     //create nodes for names
     double_node_t* name1 = create_node_D("name1");
     double_node_t* name2 = create_node_D("name2");
     double_node_t* name3 = create_node_D("name3");
     double_node_t* name4 = create_node_D("name4");
     double_node_t* name5 = create_node_D("name5");
-
 
     //insert the nodes to the list
     list_right_push_D(list, a);
@@ -50,13 +35,14 @@ int main()
     assert(c == list->tail);
     assert(3 == list->len);
 
-    ConsoleD_CHAR(list);
-    //insert the nodes in names
+    //ConsoleD(list);
     
+    //insert the nodes in names
     List_at_middle_push_D(names,name1,4);
     List_at_middle_push_D(names,name3,2);    
-    List_at_middle_push_D(names,name4,3);    
-    ConsoleD_CHAR(names);
+    List_at_middle_push_D(names,name4,3);  
+    //ConsoleD(names);
+
     // empty the list
     delete_list_D(list);
 
@@ -65,7 +51,7 @@ int main()
     assert(NULL == list->tail);
     assert(0 == list->len);
     
-
+    
     //create new nodes
     double_node_t* d = create_node_D("d");
     double_node_t* e = create_node_D("e");
@@ -85,11 +71,11 @@ int main()
     double_node_t* result_find = finde_node_D(list,"f");
     if(result_find != NULL)
     {   
-        printf(GREEN"the node, it has (%s) as value  is in the list\n"RESET,(char*)result_find->val);
+        //printf(GREEN"the node, it has (%s) as value  is in the list\n"RESET,(char*)result_find->val);
     }
     else
     {
-        printf(GREEN"ther is no node contain a (%s)\n"RESET,(char*)result_find->val);
+        //printf(GREEN"ther is no node contain a (%s)\n"RESET,(char*)result_find->val);
     }
     
     //finde a node by index
@@ -98,17 +84,17 @@ int main()
     if(result_at != NULL)
     {
 
-        printf(GREEN"at the index (%d) we have a node contain this value(%s)"RESET,index,(char*)result_at->val);
+        //printf(GREEN"at the index (%d) we have a node contain this value(%s)"RESET,index,(char*)result_at->val);
 
     }
     else
     {
-        printf(GREEN"at this index (%d) we have not node"RESET,index);
+        //printf(GREEN"at this index (%d) we have not node"RESET,index);
     }
 
     
     //print it  
-    ConsoleD_CHAR(list);
+    //ConsoleD(list);
 
     return 0;
 }

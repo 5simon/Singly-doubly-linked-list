@@ -39,6 +39,7 @@ double_node_t* create_node_D(void* val)
 }
 
 
+
 void list_right_push_D(double_list_t* list, double_node_t* node)
 {
     if(!node || !list)
@@ -254,7 +255,7 @@ void remove_node_D(double_list_t* list, double_node_t* node)
     list->len--;
 }
 
-void ConsoleD_CHAR(double_list_t* list)
+void ConsoleD_char(double_list_t* list)
 {
     if(!list)
         return;
@@ -266,12 +267,13 @@ void ConsoleD_CHAR(double_list_t* list)
     while(node != NULL)
     {
         printf(BLUE"Current node  value: %s, At position %d.\n"RESET, (char*)node->val, index + 1);
-        //printf("|%s| ->",(char*)node->val);
+
         node = node->next;
         index++;
     }
 }
-void ConsoleD_INT(double_list_t* list)
+
+void ConsoleD_int(double_list_t* list)
 {
     if(!list)
         return;
@@ -283,7 +285,7 @@ void ConsoleD_INT(double_list_t* list)
     while(node != NULL)
     {
         printf(BLUE"Current node  value: %d, At position %d.\n"RESET, (int*)node->val, index + 1);
-        //printf("|%s| ->",(char*)node->val);
+
         node = node->next;
         index++;
     }

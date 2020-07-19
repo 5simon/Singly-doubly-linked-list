@@ -114,7 +114,7 @@ void remove_node_D(double_list_t* list, double_node_t* node);
         *Parameters: double_list_t* list
         *Declaration
         */
-void ConsoleD_CHAR(double_list_t* list);
+void ConsoleD_char(double_list_t* list);
 
         /*
         *Return Type: void
@@ -122,6 +122,7 @@ void ConsoleD_CHAR(double_list_t* list);
         *Parameters: double_list_t* list
         *Declaration
         */
-void ConsoleD_INT(double_list_t* list);
+void ConsoleD_int(double_list_t* list);
+
 
 #endif
