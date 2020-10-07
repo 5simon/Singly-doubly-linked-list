@@ -35,13 +35,13 @@ int main()
     assert(c == list->tail);
     assert(3 == list->len);
 
-    //ConsoleD(list);
+    ConsoleD_char(list);
     
     //insert the nodes in names
     List_at_middle_push_D(names,name1,4);
     List_at_middle_push_D(names,name3,2);    
     List_at_middle_push_D(names,name4,3);  
-    //ConsoleD(names);
+    ConsoleD_char(names);
 
     // empty the list
     delete_list_D(list);
@@ -94,7 +94,7 @@ int main()
 
     
     //print it  
-    //ConsoleD(list);
+    ConsoleD_char(list);
 
     return 0;
 }

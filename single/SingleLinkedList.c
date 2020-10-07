@@ -142,6 +142,8 @@ void list_right_pop_S(single_list_t* list)
     }
 
     list->len--;
+    free(node);    
+    free(list);
     //ConsoleS(list);
 }
 
@@ -211,6 +213,8 @@ void delete_list_S(single_list_t* list)
     list->len = 0;
     list->head = NULL;
     list->tail = NULL;
+
+    free(next);    
    // ConsoleS(list);
 }
 

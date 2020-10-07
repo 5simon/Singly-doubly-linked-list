@@ -115,8 +115,11 @@ void list_right_pop_D(double_list_t* list)
         list->tail = NULL;
         list->head = NULL;
     }
-
+    
     list->len--;
+    free(node);    
+    free(list);
+
 }
 
 void list_left_push_D(double_list_t* list, double_node_t* node)
@@ -159,8 +162,10 @@ void list_left_pop_D(double_list_t* list)
         list->tail = NULL;
         list->head = NULL;
     }
-    
     list->len--;
+    free(node);
+    free(list);
+
 }
 
 double_node_t* finde_node_D(double_list_t* list, void* val)
@@ -226,6 +231,8 @@ void delete_list_D(double_list_t* list)
     list->len = 0;
     list->head = NULL;
     list->tail = NULL;
+    free(next);
+
 }
 
 void remove_node_D(double_list_t* list, double_node_t* node)
@@ -252,6 +259,8 @@ void remove_node_D(double_list_t* list, double_node_t* node)
     }
     
     free(node);
+    free(list);
+
     list->len--;
 }
 

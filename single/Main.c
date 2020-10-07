@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     assert(b == list->head->next);
     assert(c == list->tail);
     assert(3 == list->len);
-    //ConsoleS_char(list);
+    ConsoleS_char(list);
     //numbers
     list_right_push_S(number, one);
     list_right_push_S(number, two);
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     }
     
 
-    //ConsoleS_int(number);
+    ConsoleS_int(number);
 
 
     // empty the list from the nodes
@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
     {
         //printf(GREEN"Index %d is out of bounds\n"RESET, index);
     }
-    //ConsoleS_char(list);
+    ConsoleS_char(list);
 
     return 0;
 }
