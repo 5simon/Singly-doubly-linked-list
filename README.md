@@ -4,20 +4,19 @@ clone this Projekt
 ```
 git clone https://github.com/5simon/Singly-doubly-linked-list.git
 ```
-Build the project
-Double Linked list ->
+Build Double Linked list ->
 ```
 cd Double
 make 
 ./Double.o
 ```
-Single Linked List ->
+Build Single Linked List ->
 ```
 cd single
 make
 ./Single.o
 ```
-clean
+clean ->
 ```
 rm *.o
 ```
