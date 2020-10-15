@@ -2,5 +2,22 @@ this is a Singly-doubly-linked-list implemention in C for Seminar Exploring data
 
 clone this Projekt
 ```
-https://github.com/5simon/Singly-doubly-linked-list.git
+git clone https://github.com/5simon/Singly-doubly-linked-list.git
+```
+Build the project
+Double Linked list ->
+```
+cd Double
+make 
+./Double.o
+```
+Single Linked List ->
+```
+cd single
+make
+./Single.o
+```
+clean
+```
+rm *.o
 ```
